@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Page</title>
+    <style>
+      .container {
+        height: 950px;
+        width: 100%;
+        margin: auto;
+      }
+      .navbar {
+        background-color: #1d2634;
+        border-radius: 0px;
+        height: 100px;
+        width: 100%;
+        margin-top: 0px;
+      }
+      .navbar ul {
+        overflow: auto;
+      }
+      .navbar li {
+        list-style: none;
+        float: right;
+        margin: 18px 9px;
+      }
+
+      .eksaath {
+        margin-top: 19px;
+      }
+      .navbar li a {
+        padding: 19px 3px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      .navbar input {
+        border: 2px solid black;
+        border-radius: 15px;
+        padding: 3px 17px;
+        width: 130px;
+      }
+      .Login {
+        flex-basis: 100%;
+        background: #5788c0;
+        color: #ffffff;
+        height: 40px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+        padding: 12px 12px;
+        width: 180px;
+        margin: 9px 38px;
+      }
+      .Cart {
+        flex-basis: 100%;
+        background: #15baac;
+        color: #ffffff;
+        height: 40px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+        padding: 12px 12px;
+        width: 90px;
+        margin-top: 9px;
+      }
+
+      .Tech {
+        float: left;
+        font-size: 28px;
+        margin-top: 0.57rem;
+        font-weight: bold;
+        color: #5788c0;
+      }
+      .twoContainers {
+        height: 800px;
+        display: flex;
+      }
+      .container1 {
+        border: 2px solid rgb(255, 255, 255);
+        height: 100%;
+        width: 357px;
+      }
+      .container2 {
+        border: 3px solid #5788c0;
+        height: 100%;
+        width: 893px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #5788c0;
+      }
+      .item {
+        border: 2px solid #5788c0;
+        margin: 10px;
+        padding: 3px;
+        width: 262px;
+        height: 340px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .insidecontainer {
+        border: 2px solid rgb(255, 255, 255);
+        margin: 10px;
+        padding: 3px;
+        width: 231px;
+        height: 310px;
+      }
+      .imagecontainer {
+        border: 1px solid rgb(181, 176, 176);
+        width: 230px;
+        height: 207px;
+        margin-top: 0px;
+        padding: 0px 0px;
+        border-radius: 5px;
+      }
+      p {
+        padding: 0px 0px;
+        margin: 0px 0px;
+      }
+      .butnfield2 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+      }
+      .butnfield2 .buynow button {
+        background: #5788c0;
+        color: #ffffff;
+        height: 37px;
+        width: 109px;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 12px;
+      }
+      .butnfield2 .addtocart button {
+        background: #15baac;
+        color: #ffffff;
+        height: 37px;
+        width: 109px;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 12px;
+      }
+      .InputField label {
+        margin-bottom: 5px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .InputField {
+        margin: 109px 58px;
+      }
+      .InputField input {
+        border: 1px solid #2f2c2c;
+        border-radius: 7px;
+        font-family: inherit;
+        font-size: 12px;
+        padding: 10px;
+        width: 40px;
+      }
+      .checkbox {
+        border-radius: 1px;
+        color: #000000;
+        margin-top: 46px;
+        margin-left: 65px;
+        padding: 12px 10px;
+      }
+      .checkbox .checkboxall {
+        margin: 13px 2px;
+      }
+      .checkbox .checkboxall input {
+        display: inline-block;
+        margin-bottom: 5px;
+        text-align: left;
+        font-weight: bold;
+        background-color: rgb(53, 112, 112);
+      }
+
+      .line1 {
+        width: 301px;
+        margin-left: 36px;
+      }
+      .line2 {
+        margin-left: 47px;
+        width: 211px;
+      }
+      .line3 {
+        margin-left: 24px;
+        width: 211px;
+      }
+      .filters {
+        margin: 12px 62px;
+        padding-top: 12px;
+      }
+      .price {
+        margin: 56px 48px;
+        padding-top: 12px;
+      }
+      .buynow {
+        color: #5788c0;
+      }
+      .addtocart {
+        color: #15baac;
+      }
+      #img1 img {
+        width: 204px;
+        height: 207px;
+        margin-left: 10px;
+      }
+      #img2 img {
+        width: 170px;
+        height: 180px;
+        margin-left: 38px;
+        margin-top: 10px;
+      }
+      #img3 img {
+        width: 170px;
+        height: 180px;
+        margin-left: 33px;
+        margin-top: 10px;
+      }
+      #img4 img {
+        width: 170px;
+        height: 180px;
+        margin-left: 33px;
+        margin-top: 10px;
+      }
+      #img5 img {
+        width: 187px;
+        height: 197px;
+        margin-left: 26px;
+        margin-top: 10px;
+      }
+      #img6 img {
+        width: 170px;
+        height: 180px;
+        margin-left: 33px;
+        margin-top: 10px;
+      }
+      .filters1 {
+        margin-top: 50px;
+      }
+      .price1 {
+        margin-top: 50px;
+      }
+      .avail {
+        margin-top: 150px;
+        margin-left: 23px;
+      }
+      .avail span {
+        margin-top: 100px;
+        margin-left: 23px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul>
+          <div class="Tech">
+            <li>Techvariable eCom</li>
+          </div>
+
+          <li>
+            <button type="button" class="Login">Login Or Register</button>
+          </li>
+          <li>
+            <button type="button" class="Cart">Cart</button>
+          </li>
+          <div class="eksaath">
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Home</a></li>
+          </div>
+        </ul>
+      </nav>
+      <div class="twoContainers">
+        <div class="container1">
+          <div class="filters1">
+            <span class="filters">Filters</span>
+            <hr class="line1" />
+          </div>
+          <div class="price1">
+            <span class="price">Price</span>
+            <hr class="line2" />
+          </div>
+
+          <div class="InputField">
+            <label for="username">Max(Rs)</label>
+            <input type="text" placeholder="" />
+
+            <label for="username">Min(Rs)</label>
+            <input type="text" placeholder="" />
+          </div>
+          <div class="avail">
+            <span>Availability</span>
+            <hr class="line3" />
+          </div>
+          <div class="checkbox">
+            <div class="checkboxall">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Brand</label>
+            </div>
+            <div class="checkboxall">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Color</label>
+            </div>
+            <div class="checkboxall">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Size</label>
+            </div>
+            <div class="checkboxall">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Stock</label>
+            </div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="item" id="item1">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img1">
+                <img src="\chair1.jpg" />
+              </div>
+              <p>Gaming Chair</p>
+              <p>Rs 69000</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="item2">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img2">
+                <img src="\mobile.jpg" />
+              </div>
+              <p>iPhone S22</p>
+              <p>Rs 120000</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="item3">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img3">
+                <img src="\laptop.jpg" />
+              </div>
+              <p>HP Probook 3.0</p>
+              <p>Rs 90000</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="item4">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img4">
+                <img src="\set.jpg" />
+              </div>
+              <p>Woofer</p>
+              <p>Rs 40000</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="item5">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img5">
+                <img src="\headphones.jpg" />
+              </div>
+              <p>Headphones</p>
+              <p>Rs 4000</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" id="item6">
+            <div class="insidecontainer">
+              <div class="imagecontainer" id="img6">
+                <img src="\bag.jpg" />
+              </div>
+              <p>Backpack Trilogy 1.3</p>
+              <p>Rs 3200</p>
+              <div class="butnfield2">
+                <div class="buynow"><button type="button">BUY NOW</button></div>
+                <div class="addtocart">
+                  <button type="button" class="addtocart">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
